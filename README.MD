@@ -7,4 +7,4 @@ This is an example of raymarched sphere
 
 **Live preview: https://rawgit.com/SergiiSharpov/raymarched-sphere/master/dist/index.html**
 ###### Screenshots:
-![Example](https://image.ibb.co/cRmVTU/Screen.png)
+![Example](https://image.ibb.co/cSM5TU/SCREEN_NEW.png)
