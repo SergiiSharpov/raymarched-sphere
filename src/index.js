@@ -4,13 +4,11 @@ import * as _ from 'lodash';
 
 let camera, scene, renderer;
 let geometry, material, mesh, texture;
-let shaderMaterial, shaderData;
+let shaderData;
 let clock;
 
 init();
 animate();
-
-//console.log(_.assign);
 
 function init() {
 
@@ -21,20 +19,13 @@ function init() {
 
     scene = new THREE.Scene();
 
-    // texture = new THREE.TextureLoader().load( "textures/env.jpg" );
-
     shaderData = _.extend({}, raySphere);
 
-    shaderMaterial = new THREE.ShaderMaterial(shaderData);
-
-    geometry = new THREE.BoxGeometry( 0.9, 0.9, 0.9 );//new THREE.PlaneGeometry( 1, 1, 32 );
-    material = shaderMaterial;//new THREE.MeshNormalMaterial();
+    geometry = new THREE.BoxGeometry( 0.9, 0.9, 0.9 );
+    material = new THREE.ShaderMaterial(shaderData);
 
     mesh = new THREE.Mesh( geometry, material );
     scene.add( mesh );
-
-    // mesh.rotation.y = 0.5;
-    // mesh.rotation.x = 0.4;
 
     renderer = new THREE.WebGLRenderer( { antialias: true } );
     renderer.setSize( window.innerWidth, window.innerHeight );
@@ -45,7 +36,7 @@ function init() {
 
 }
 
-function onWindowResize( event ) {
+function onWindowResize() {
     const SCREEN_WIDTH = window.innerWidth;
     const SCREEN_HEIGHT = window.innerHeight;
 
@@ -66,7 +57,6 @@ function animate() {
     shaderData.uniforms.resolution.value.y = window.innerHeight;
 
     shaderData.uniforms.inverseWorld.value = mesh.matrixWorld.getInverse(mesh.matrixWorld);
-    //getInverse
 
     shaderData.uniforms.time.value = clock.elapsedTime;
 
