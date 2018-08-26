@@ -12,7 +12,9 @@
     "js",
     "threejs",
     "3d",
-    "webgl"
+    "webgl",
+    "raymarching",
+    "distance field"
   ],
   "author": "Sergey Sharpov",
   "license": "ISC",
