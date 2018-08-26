@@ -1,8 +1,9 @@
 import * as THREE from 'three';
 import raySphere from './shaders/marchedsphere/index';
 import * as _ from 'lodash';
+import './OrbitControls';
 
-let camera, scene, renderer;
+let camera, scene, renderer, controls;
 let geometry, material, mesh;
 let shaderData;
 let clock;
@@ -18,6 +19,11 @@ function init() {
     clock = new THREE.Clock();
 
     scene = new THREE.Scene();
+
+    controls = new THREE.OrbitControls( camera );
+    controls.autoRotate = true;
+    controls.enableDamping = true;
+    controls.enablePan = false;
 
     shaderData = _.extend({}, raySphere);
 
@@ -50,6 +56,8 @@ function onWindowResize() {
 function animate() {
 
     requestAnimationFrame( animate );
+
+    controls.update();
 
     clock.getDelta();
 

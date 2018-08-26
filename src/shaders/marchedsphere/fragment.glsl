@@ -136,7 +136,7 @@ vec3 raymarch(vec2 p, float s) {
 
     vec3 worldDir = viewToWorld * viewDir;
 
-    float dist = shortestDistanceToSurface(eye, viewDir, MIN_DIST, MAX_DIST);
+    float dist = shortestDistanceToSurface(eye, worldDir, MIN_DIST, MAX_DIST);
 
     if (dist > MAX_DIST - EPSILON) {
         // Didn't hit anything
