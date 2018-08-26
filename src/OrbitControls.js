@@ -6,8 +6,6 @@
  * @author erich666 / http://erichaines.com
  */
 
-import * as THREE from 'three';
-
 THREE.OrbitControls = function ( object, domElement ) {
 
     this.object = object;

@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 import raySphere from './shaders/marchedsphere/index';
 import * as _ from 'lodash';
 import './OrbitControls';

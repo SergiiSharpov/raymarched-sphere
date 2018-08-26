@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -25,6 +26,9 @@ module.exports = {
                 from: 'textures/*',
                 to: './'
             }
-        ])
+        ]),
+        new webpack.ProvidePlugin({
+            THREE: 'three'
+        })
     ]
 };
