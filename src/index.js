@@ -3,7 +3,7 @@ import raySphere from './shaders/marchedsphere/index';
 import * as _ from 'lodash';
 
 let camera, scene, renderer;
-let geometry, material, mesh, texture;
+let geometry, material, mesh;
 let shaderData;
 let clock;
 
